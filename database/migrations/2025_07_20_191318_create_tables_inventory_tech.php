@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+        //
         Schema::create('categories', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->timestamps();
-        });
+    $table->id();
+    $table->string('name', 50);
+    $table->timestamps();
+});
 
         Schema::create('devices_models', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -59,13 +60,25 @@ return new class extends Migration
             $table->string('country');
             $table->timestamps();
         });
+        Schema::create('assets', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->foreignId('device_id')->contrained('devices');
+            $table->foreignId('personal_id')->contrsaiained('personales');
+            $table->foreignId('warehouse_id')->contrained('warehouses');
+            $table->foreignId('user_id')->contrained('users');
+            $table->timestamps();
+        });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('');
+       Schema::dropIfExists('categories');
+        Schema::dropIfExists('devices');
+        Schema::dropIfExists('devices_models');
+        Schema::dropIfExists('personales');
+        Schema::dropIfExists('warehouses');
+        Schema::dropIfExists('assets');
     }
 };
