@@ -18,10 +18,10 @@ return new class extends Migration
     $table->timestamps();
 });
 
-        Schema::create('devices_models', function (Blueprint $table) {
+        Schema::create('device_models', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignId('category_id')->contrained('categories');
-            $table->string('warehouse_id');
+            $table->string('brand');
             $table->string('model');
             $table->string('operative_system');
             $table->string('arquitecture', 10);
@@ -76,7 +76,7 @@ return new class extends Migration
     {
        Schema::dropIfExists('categories');
         Schema::dropIfExists('devices');
-        Schema::dropIfExists('devices_models');
+        Schema::dropIfExists('de_models');
         Schema::dropIfExists('personales');
         Schema::dropIfExists('warehouses');
         Schema::dropIfExists('assets');

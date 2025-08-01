@@ -15,9 +15,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+    \App\Models\User::factory()->count(5)->create();
+    \App\Models\Category::factory()->count(5)->create();
+    \App\Models\DeviceModel::factory()->count(10)->create();
+    \App\Models\Device::factory()->count(20)->create();
+    \App\Models\Personal::factory()->count(10)->create();
+    \App\Models\Warehouse::factory()->count(5)->create();
+    \App\Models\Asset::factory()->count(15)->create();
     }
 }
