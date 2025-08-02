@@ -2,7 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Device;
+use App\Models\Personal;
+use App\Models\User;
+use App\Models\Warehouse;
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Asset>
@@ -20,7 +25,7 @@ class AssetFactory extends Factory
 
             'device_id' => Device::factory(),
             'personal_id' => Personal::factory(),
-            'branch_id' => Warehouse::factory(),
+            'warehouse_id' => Warehouse::factory(),
             'user_id' => User::factory(),
 
         ];

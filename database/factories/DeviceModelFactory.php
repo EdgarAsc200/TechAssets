@@ -18,11 +18,11 @@ class DeviceModelFactory extends Factory
     public function definition(): array
     {
         return [
-            'category_id' => Category::factory(),
-            '' => $this->faker->company,
+            'category_id' => Category::factory()->create(),
+            'brand' => $this->faker->company,
             'model' => $this->faker->word . '-' . $this->faker->numberBetween(100, 999),
-            'operating_system' => $this->faker->randomElement(['Windows', 'Linux', 'macOS']),
-            'architecture' => $this->faker->randomElement(['x86', 'x64']),
+            'operative_system' => $this->faker->randomElement(['Windows', 'Linux', 'macOS']),
+            'arquitecture' => $this->faker->randomElement(['x86', 'x64']),
         ];
     }
 }

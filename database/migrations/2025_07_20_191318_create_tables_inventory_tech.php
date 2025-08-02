@@ -54,7 +54,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('street');
-            $table->integer('numer_street')->unsigned()->nullable()->default(12);
+            $table->integer('street_number')->unsigned()->nullable()->default(12);
             $table->string('city');
             $table->string('state');
             $table->string('country');
@@ -74,9 +74,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-       Schema::dropIfExists('categories');
+        Schema::dropIfExists('categories');
         Schema::dropIfExists('devices');
-        Schema::dropIfExists('de_models');
+        Schema::dropIfExists('device_models');
         Schema::dropIfExists('personales');
         Schema::dropIfExists('warehouses');
         Schema::dropIfExists('assets');

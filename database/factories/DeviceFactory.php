@@ -20,7 +20,7 @@ class DeviceFactory extends Factory
 
         return [
             'device_model_id' => DeviceModel::factory(),
-            'serial' => strtoupper($this->faker->bothify('??##??##')),
+            'serie' => strtoupper($this->faker->bothify('??##??##')),
             'price' => $this->faker->randomFloat(2, 200, 2000),
             'memory_ram' => $this->faker->randomElement([4, 8, 16, 32]),
             'storage' => $this->faker->randomElement([128, 256, 512, 1024]),
