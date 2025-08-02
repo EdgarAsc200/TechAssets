@@ -9,7 +9,7 @@ use App\Models\DeviceModel;
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Device>
  */
 class DeviceFactory extends Factory
-{
+{ 
     /**
      * Define the model's default state.
      *

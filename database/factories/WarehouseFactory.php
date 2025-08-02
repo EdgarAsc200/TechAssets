@@ -14,7 +14,7 @@ class WarehouseFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+      public function definition(): array
     {
         return [
             'name' => 'Warehouse ' . $this->faker->citySuffix,
